@@ -19,7 +19,10 @@ class EmployeeController extends Controller
         $employees = Employee::all();
         return response([ 'employees' =>
             EmployeeResource::collection($employees),
-            'message' => 'Successful'], 200);
+            'message' => 'Successful'
+        ],
+            200
+        );
     }
 
     /**
@@ -39,9 +42,13 @@ class EmployeeController extends Controller
             'salary' => 'required|max:50'
         ]);
 
-        if($validator->fails()){
-            return response(['error' => $validator->errors(),
-                'Validation Error']);
+        if($validator->fails()) {
+            return response(
+                [
+                    'error' => $validator->errors(),
+                    'Validation Error'
+                ]
+            );
         }
 
         $employee = Employee::create($data);
