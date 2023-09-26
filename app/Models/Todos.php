@@ -10,6 +10,6 @@ class Todos extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 'check'
+        'name', 'check', 'user_id'
     ];
 }
