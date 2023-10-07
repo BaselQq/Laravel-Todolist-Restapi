@@ -14,9 +14,9 @@ class TodosController extends Controller
      */
     public function index()
     {
-        $todos = Todos::all();
+        $todo = Todos::all();
         return response(['todos' =>
-            TodosResource::collection($todos),
+            TodosResource::collection($todo),
             'message' => 'succesful'
         ],
             200
@@ -43,22 +43,22 @@ class TodosController extends Controller
             );
         }
 
-        $todos = Todos::create($data);
+        $todo = Todos::create($data);
 
         return response(
             [
-                'todos' => new TodosResource($todos),
+                'todos' => new TodosResource($todo),
                 'message' => 'Success'], 200);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Todos $todos)
+    public function show(Todos $todo)
     {
         return response (
             [
-                'todos' => new TodosResource($todos),
+                'todos' => new TodosResource($todo),
                 'message' => 'Success'
         ], 200);
     }
@@ -66,13 +66,13 @@ class TodosController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Todos $todos)
+    public function update(Request $request, Todos $todo)
     {
-        $todos->update($request->all());
+        $todo->update($request->all());
 
         return response(
             [
-                'todos' => new TodosResource($todos),
+                'todos' => new TodosResource($todo),
                 'message' => 'Success',
                 200
             ]
@@ -82,9 +82,9 @@ class TodosController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Todos $todos)
+    public function destroy(Todos $todo)
     {
-        $todos->delete();
+        $todo->delete();
 
         return response(['message' => 'Todo deleted']);
     }
