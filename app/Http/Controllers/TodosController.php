@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Resources\TodosResource;
 use App\Models\Todos;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class TodosController extends Controller
@@ -14,7 +15,8 @@ class TodosController extends Controller
      */
     public function index()
     {
-        $todo = Todos::all();
+        $todo = Todos::all()->where('user_id', Auth::id())->sortByDesc('created_at');
+
         return response(['todos' =>
             TodosResource::collection($todo),
             'message' => 'succesful'
