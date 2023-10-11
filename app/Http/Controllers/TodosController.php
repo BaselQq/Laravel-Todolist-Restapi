@@ -15,7 +15,7 @@ class TodosController extends Controller
      */
     public function index()
     {
-        $todo = Todos::all()->where('user_id', Auth::id())->sortByDesc('created_at');
+        $todo = Todos::all()->where('user_id', Auth::id())->sortByDesc('created_at')->sortBy("check");
 
         return response(['todos' =>
             TodosResource::collection($todo),
