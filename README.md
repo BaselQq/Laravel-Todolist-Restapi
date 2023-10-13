@@ -14,6 +14,32 @@ GET|HEAD        api/todos/{todo} ......... todos.show › TodosController@show
 PUT|PATCH       api/todos/{todo} ..... todos.update › TodosController@update
 DELETE          api/todos/{todo} ... todos.destroy › TodosController@destroy
 
+# Install
+```bash
+composer install
+```
+
+```bash
+cp .env.example .env
+```
+
+```bash
+php artisan migrate
+```
+
+```bash
+php artisan config:clear
+```
+
+```bash
+php artisan config:cache
+```
+
+and Enjoy!
+```bash
+php artisan serve
+```
+
 # Ressource - Article
 https://blog.logrocket.com/laravel-passport-a-tutorial-and-example-build/
 
