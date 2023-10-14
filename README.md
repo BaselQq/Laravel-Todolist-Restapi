@@ -1,5 +1,5 @@
 # Frontend in React:
-https://github.com/BaselQq/laravel_todolist_frontend
+https://github.com/BaselQq/react_todolist_frontend
 
 # Important RestAPI Endpoints:
 ```bash
