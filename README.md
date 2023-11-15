@@ -1,20 +1,6 @@
 # Frontend in React:
 https://github.com/BaselQq/react_todolist_frontend
 
-# Important RestAPI Endpoints:
-```bash
-php artisan route::list
-```
-
-POST            api/login .................... Auth\UserAuthController@login
-POST            api/register .............. Auth\UserAuthController@register
-GET|HEAD        api/todos .............. todos.index › TodosController@index
-POST            api/todos .............. todos.store › TodosController@store
-GET|HEAD        api/todos/{todo} ......... todos.show › TodosController@show
-PUT|PATCH       api/todos/{todo} ..... todos.update › TodosController@update
-DELETE          api/todos/{todo} ... todos.destroy › TodosController@destroy
-
-
 # Install
 ```bash
 composer install
