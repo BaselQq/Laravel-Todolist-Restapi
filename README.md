@@ -1,5 +1,5 @@
 # Frontend in React:
-https://github.com/BaselQq/react_todolist_frontend
+https://github.com/BaselQq/React-Todolist-Frontend
 
 # Install
 ```bash
